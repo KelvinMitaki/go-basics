@@ -24,12 +24,11 @@ func main() {
 
 	useSlices()
 
-	// useVariables()
+	useVariables()
 
-	// usePointers()
+	usePointers()
 
-	// useStruct()
-
+	useStruct()
 }
 
 func useVariables() {
@@ -66,7 +65,6 @@ func changeUsingPointer(s *string) {
 	newValue := "Red"
 
 	*s = newValue
-
 }
 
 func useStruct() {
@@ -105,7 +103,6 @@ func useMaps() {
 	myNewMap["me"] = me
 
 	fmt.Println(myNewMap["me"].firstName)
-
 }
 
 func useSlices() {
@@ -127,7 +124,6 @@ func useSlices() {
 	names := []string{"first", "second", "third"}
 
 	fmt.Println(names)
-
 }
 
 func useDecisions() {
