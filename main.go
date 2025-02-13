@@ -186,3 +186,58 @@ func useLoops() {
 		fmt.Println(user.firstName, user.lastName)
 	}
 }
+
+// INTERFACES
+type Animal interface {
+	Says() string
+	NumberOfLegs() int
+}
+
+type Dog struct {
+	Name  string
+	Breed string
+}
+
+type Gorilla struct {
+	Name          string
+	Color         string
+	NumberOfTeeth int
+}
+
+func useInterfaces() {
+	dog := Dog{
+		Name:  "Samson",
+		Breed: "German Shephard",
+	}
+
+	gorilla := Gorilla{
+		Name:          "Jock",
+		Color:         "grey",
+		NumberOfTeeth: 38,
+	}
+
+	printInfo(&dog)
+
+	printInfo(&gorilla)
+}
+
+func printInfo(a Animal) {
+
+	fmt.Println("this animal says ", a.Says(), "and it has ", a.NumberOfLegs(), "legs")
+}
+
+func (d *Dog) Says() string {
+	return "Woof"
+}
+
+func (d *Dog) NumberOfLegs() int {
+	return 4
+}
+
+func (d *Gorilla) Says() string {
+	return "Ugh"
+}
+
+func (d *Gorilla) NumberOfLegs() int {
+	return 4
+}
